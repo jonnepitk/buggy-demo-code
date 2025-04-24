@@ -15,7 +15,7 @@ namespace BuggyDemoWeb.Controllers
     public class MemoryLeakController : Controller
     {
         private IMemoryCache cache;
-        private static ConcurrentBag<string> _myListKeepsGrowing= new ConcurrentBag<string>();
+        private static ConcurrentBag<string> _myListKeepsGrowing = new ConcurrentBag<string>();
 
         private readonly LegacyService legacyService;
 
@@ -76,7 +76,7 @@ namespace BuggyDemoWeb.Controllers
             legacyService.InsertIntoAStringBuilder();
 
             return Ok();
-        }        
+        }
 
         /// <summary>
         /// Create a 20k string and return it...

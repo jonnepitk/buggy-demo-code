@@ -56,7 +56,7 @@ namespace BuggyDemoWeb.Controllers
             route = route.Split(@"/").FirstOrDefault();
             switch (route)
             {
-                case("crash"):
+                case ("crash"):
                     return DiagnosticType.Crash;
                 case ("exception"):
                     return DiagnosticType.Exceptions;

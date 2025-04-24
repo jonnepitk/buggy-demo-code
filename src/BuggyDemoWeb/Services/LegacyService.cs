@@ -22,7 +22,7 @@ namespace BuggyDemoCode.Services
         private readonly Uri connectionString;
         static readonly HttpClient client = new HttpClient();
 
-        public LegacyService(IConfiguration config) 
+        public LegacyService(IConfiguration config)
         {
             connectionString = new Uri(config.GetConnectionString("DataWebServer"));
         }
@@ -223,7 +223,7 @@ namespace BuggyDemoCode.Services
             var sb = new StringBuilder();
             var list = new DataRecord();
 
-            await Task.Delay(1000); 
+            await Task.Delay(1000);
 
             foreach (var item in list.MyList)
             {
@@ -243,12 +243,12 @@ namespace BuggyDemoCode.Services
         }
 
         public string ValidateAnotherCollection()
-        { 
+        {
             var customers = this.RetrieveCustomerData();
 
             foreach (var customer in customers)
             {
-                if(customer.Id > 300)
+                if (customer.Id > 300)
                     Console.WriteLine(this.CityAbbreviation(customer.Address.City));
             }
 
@@ -323,7 +323,7 @@ namespace BuggyDemoCode.Services
 
         private List<CustomerRecord> RetrieveCustomerData()
         {
-            return new List<CustomerRecord> {  
+            return new List<CustomerRecord> {
                 new CustomerRecord { FirstName = "Peter", LastName = "Smith", Address = new Address { Address1 = "13", City = "", State = "" }, Id = 123 },
                 new CustomerRecord { FirstName = "Andrew", LastName = "Jones", Address = new Address { Address1 = "64", City = "", State = "" }, Id = 224 },
                 new CustomerRecord { FirstName = "John", LastName = "Guy", Address = new Address { Address1 = "54345", City = "", State = "" }, Id = 554 },
