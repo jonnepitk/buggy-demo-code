@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -88,7 +88,8 @@ namespace BuggyDemoWeb.Controllers
         {
             legacyService.TypicalRecurrsionExample();
 
-            return Ok();        }
+            return Ok();
+        }
 
         [HttpGet("crash/stack-overflow2")]
         public IActionResult StackOverflow2()

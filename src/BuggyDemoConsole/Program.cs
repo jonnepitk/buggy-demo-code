@@ -10,7 +10,7 @@ using System.Text.Json;
 
 const int INDEX_RANGE = 10;
 string arg0 = null;
-string arg1  = string.Empty;
+string arg1 = string.Empty;
 string arg2 = "32.3";
 int[] arg3 = new int[INDEX_RANGE];
 
@@ -50,7 +50,7 @@ switch (keyReaded.Key)
         // IsItNullOrNothing();
         break;
     case ConsoleKey.D4: //System Sql Exception
-        
+
         break;
     case ConsoleKey.D5: //Argument Exception
         ValidateThisValue(arg1);
@@ -108,10 +108,10 @@ static void MyExceptionIsBetterThanYours()
 {
     var people = new List<string> { "Mark Downie", "Mark Wilson-Thomas", "Andy Sterland", "Filisha Shah" };
 
-    if(!people.Exists(x => x.StartsWith("Harshada")))
+    if (!people.Exists(x => x.StartsWith("Harshada")))
     {
         throw new EmployeeNotFoundException("Harshada");
-    }   
+    }
 }
 
 static async void DataDataBricksAndClay()
@@ -149,7 +149,7 @@ static int ValidateThisValue(string thevalue)
     {
         throw new ArgumentNullException(nameof(thevalue));
     }
-    
+
     if (thevalue.Length == 0)
     {
         throw new ArgumentException("Zero-length string invalid", nameof(thevalue));
@@ -165,7 +165,7 @@ static int CanYouConvertThisValue(string age)
 
 static void ArguingRarelyFixesAnything(int[] myarray)
 {
-    if(myarray.Length >= INDEX_RANGE) 
+    if (myarray.Length >= INDEX_RANGE)
     {
         throw new ArgumentOutOfRangeException(nameof(myarray), "Index is out of range.");
     }
@@ -185,7 +185,7 @@ static int TheCastOfTheShowIncludes(object val)
 static void TryingThisCerealItsGreat()
 {
     var resp = new MyDataResponse() { Message = "Some message...", Status = IntPtr.MinValue };
-   
+
     var str = JsonSerializer.Serialize(resp);
 
     Console.WriteLine(str);

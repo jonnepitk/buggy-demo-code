@@ -153,7 +153,7 @@ namespace BuggyDemoWeb.Controllers
 
             return Ok();
         }
-        
+
         [HttpGet("lowcpu/deadlocked-tasks-v4")]
         public IActionResult MoneyTransfer()
         {
